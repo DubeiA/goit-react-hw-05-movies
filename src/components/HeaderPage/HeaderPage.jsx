@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import css from "./Header.module.css";
+import css from "./HeaderPage.module.css";
 
 const headerItems = [
   { to: "/", title: "Home" },
