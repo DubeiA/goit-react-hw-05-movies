@@ -23,7 +23,7 @@ export const Cast = () => {
     console.log(castFilm);
   return (
     <div>
-          <ul style={{
+         {!castFilm ? <div> We dont have an information </div> :  <ul style={{
                   padding: 109,
     display: "flex",
     gap: 49,
@@ -39,7 +39,7 @@ export const Cast = () => {
         ))}
                   
               
-        </ul>
+        </ul>}
       
     </div>
   );
