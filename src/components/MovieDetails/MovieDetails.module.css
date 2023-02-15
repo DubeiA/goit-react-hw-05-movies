@@ -1,0 +1,54 @@
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  display: flex;
+}
+
+.second_container {
+  padding-top: 50px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie_pic {
+  margin: 10px 10px 20px 10px;
+}
+
+.title {
+  margin-left: 40px;
+  font-size: 35px;
+}
+
+.user_score {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.overview {
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+.overview_text {
+  margin-left: 20px;
+  size: 16px;
+  line-height: 25px;
+}
+
+.genres {
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+.genres_list {
+  margin-left: 20px;
+}
+
+.genres_padding_list {
+  padding-bottom: 5px;
+}
