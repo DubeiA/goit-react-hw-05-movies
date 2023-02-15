@@ -23,12 +23,14 @@ export const Cast = () => {
     console.log(castFilm);
   return (
     <div>
-         {!castFilm ? <div> We dont have an information </div> :  <ul style={{
+          {!castFilm ? <div> We dont have an information </div> :
+              <ul style={{
                   padding: 109,
-    display: "flex",
-    gap: 49,
-    flexWrap: "wrap",
-          }}>
+                  display: "flex",
+                  gap: 49,
+                  flexWrap: "wrap",
+              }}>
+                  
              {castFilm.map((cast) => (
           <li  key={cast.credit_id}>
                      <img width={290} height={380} src={imageError(cast.profile_path)}
