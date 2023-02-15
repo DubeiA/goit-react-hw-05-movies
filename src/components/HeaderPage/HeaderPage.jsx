@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import s from "./Header.module.css";
+import css from "./Header.module.css";
 
 const headerItems = [
   { to: "/", title: "Home" },
@@ -10,14 +10,14 @@ const headerItems = [
   
 ];
 
-export const Header = () => {
+export const HeaderPage = () => {
   return (
-    <nav className={s.nav}>
+    <nav className={css.nav}>
       <ul>
         {headerItems.map((headerItem) => (
           <li key={headerItem.title}>
             <NavLink
-              className={({ isActive }) => (isActive ? s.nav_active : null)}
+              className={({ isActive }) => (isActive ? css.nav_active : null)}
               
               to={headerItem.to}
             >

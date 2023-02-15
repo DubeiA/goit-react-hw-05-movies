@@ -1,11 +1,11 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header/Header";
+import { HeaderPage } from "../HeaderPage/HeaderPage";
 
 export const Layout = () => {
   return (
     <>
-      <Header />
+      <HeaderPage />
 
       <Suspense fallback={<div>Loading....</div>}>
         <Outlet />
