@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Outlet, Link } from "react-router-dom";
 import css from '../MovieDetails/MovieDetails.module.css'
-
 import * as FilmsAPI from '../../Api/ApiMovie'
 
 export const MovieDetails = () => {
+    // const navigate = useNavigate();
     const { movieId } = useParams();
     const [detailsForFilms, setDetailsForFilms] = useState([]);
 
@@ -13,11 +13,17 @@ export const MovieDetails = () => {
       FilmsAPI.getFilmsById(movieId).then(setDetailsForFilms);
   }, [movieId]);
     
+    // const backPage = () => {
+    //     navigate(-1)
+    // }
    
     
     console.log(detailsForFilms);
     let genres = detailsForFilms.genres
-    return <div className={css.container}>
+  return (
+    <>
+      {!detailsForFilms.status ? <div >  We dont have any information about this Movie, try to find another one </div> :
+            <div className={css.container}>
         {detailsForFilms.poster_path && <img className={css.movie_pic } width='360' src={`https://image.tmdb.org/t/p/w780${
             detailsForFilms.poster_path}`} alt={detailsForFilms.title} />}
         <div className={css.second_container}>
@@ -32,9 +38,33 @@ export const MovieDetails = () => {
             {genre.name}
           </li>
         ))}
-        </ul>
+          </ul>
+          
+          
+       
         </div>
-    </div>
+
+       
+
+    </div>}
     
+      {detailsForFilms.status &&
+        <div>
+           <ul>
+        <li>
+          <Link to="cast">Cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
+      <Outlet />
+    </div>}
     
+  
+    </>
+    
+     
+    
+  )
 };
