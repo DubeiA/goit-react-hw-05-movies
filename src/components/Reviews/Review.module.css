@@ -1,0 +1,15 @@
+.contsiner {
+  padding: 30px;
+}
+
+.author {
+  text-decoration: double;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.text {
+  margin-left: 15px;
+  size: 16px;
+  line-height: 25px;
+}

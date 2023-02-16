@@ -19,7 +19,7 @@ export default function Searchbar({onSubmit}) {
             return
         }
         onSubmit(searchName);
-    //    setSearchName('')
+       setSearchName('')
     }
 
     return (

@@ -20,10 +20,10 @@ export const Cast = () => {
         }
        return image }
     
-    console.log(castFilm);
+
   return (
     <div>
-          {!castFilm ? <div> We dont have an information </div> :
+          {!castFilm ? <div> We dont have any information </div> :
               <ul style={{
                   padding: 109,
                   display: "flex",

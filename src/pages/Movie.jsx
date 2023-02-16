@@ -19,7 +19,8 @@ export const Movie = () => {
         return 
       
         }
-        FilmsAPI.getFilmsByQuery(query).then(setFilmsByQuery)
+      FilmsAPI.getFilmsByQuery(query).then(setFilmsByQuery)
+  
     }, [query])
     
     console.log(filmsByQuery);
