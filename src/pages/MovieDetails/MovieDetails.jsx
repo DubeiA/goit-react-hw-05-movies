@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams, Outlet, Link, useNavigate} from "react-router-dom";
+import { useParams, Outlet, Link, useLocation} from "react-router-dom";
 import css from '../MovieDetails/MovieDetails.module.css'
 import * as FilmsAPI from '../../Api/ApiMovie'
 
 export const MovieDetails = () => {
-    const navigate = useNavigate();
+  
     const { movieId } = useParams();
     const [detailsForFilms, setDetailsForFilms] = useState([]);
-
+     const location = useLocation();
   useEffect(() => {
 
 
@@ -15,18 +15,15 @@ export const MovieDetails = () => {
   ;
   }, [movieId]);
 
-    
-    const backPage = () => {
-        navigate(-1)
-    }
    
+  const backLinkHref = location.state?.from ?? "/movies";
     
-    // console.log(detailsForFilms);
+
     let genres = detailsForFilms.genres
   return (
     <>
       
-      <button className={css.button} type='button' onClick={backPage}>Back</button>
+      <Link className={css.button} to={backLinkHref} >Back</Link>
       {!detailsForFilms.status ? <div style={{
         height: '50vh',
         display: 'flex',
@@ -40,7 +37,7 @@ export const MovieDetails = () => {
             detailsForFilms.poster_path}`} alt={detailsForFilms.title} />}
         <div className={css.second_container}>
             <b className={css.title}>{detailsForFilms.title} ({Number.parseInt(detailsForFilms.release_date)})</b>
-        <p className={css.user_score}>User Score: {detailsForFilms.vote_average * 10}%</p>
+        <p className={css.user_score}>User Score: {(detailsForFilms.vote_average * 10).toFixed(2)}%</p>
         <b className={css.overview}>Overview</b>
         <p className={css.overview_text}>{detailsForFilms.overview}</p>
         <b className={css.genres}>Genres</b>
@@ -59,10 +56,10 @@ export const MovieDetails = () => {
           <ul className={css.option}  >
 
           <li>
-              <Link className={css.link} to="cast">Cast</Link>
+              <Link className={css.link} to={`/movies/${movieId}/cast`} state={{ from: location.state?.from ?? 'movies' }}>Cast</Link>
           </li>
           <li>
-          <Link className={css.link} to="reviews">Reviews</Link>
+          <Link className={css.link} to={`/movies/${movieId}/reviews`} state={{ from: location.state?.from ?? 'movies' }}>Reviews</Link>
           </li>
         </ul>
           <Outlet />

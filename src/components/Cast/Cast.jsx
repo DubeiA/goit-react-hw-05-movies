@@ -2,6 +2,7 @@ import * as FilmsAPI from '../../Api/ApiMovie'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import image from '../../images/Person-Outline-coloring-page.jpg'
+import css from '../Cast/Cast.module.css'
 
 export const Cast = () => {
      const { movieId } = useParams();
@@ -14,16 +15,16 @@ export const Cast = () => {
 
     const imageError = (pic) => { 
 
-        console.log(pic);
         if (pic) {
           return `https://image.tmdb.org/t/p/w780${pic}`
         }
        return image }
     
+  console.log(castFilm);
 
   return (
     <div>
-          {!castFilm ? <div> We dont have any information </div> :
+          {castFilm.length < 1 ? <div className={css.error_message}> We dont have any information </div> :
               <ul style={{
                   padding: 109,
                   display: "flex",

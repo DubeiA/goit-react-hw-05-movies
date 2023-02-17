@@ -1,7 +1,6 @@
 import {useState } from 'react'
-// import css from '../Searchbar/Searchbar.module.css'
+import css from '../Searchbar/Searchbar.module.css'
 import PropTypes from 'prop-types';
-
 
 
 export default function Searchbar({onSubmit}) {
@@ -22,24 +21,25 @@ export default function Searchbar({onSubmit}) {
        setSearchName('')
     }
 
+    
+
     return (
        
 
-        <form
+        <form className={css.search}
             // className={css.SearchForm}
             onSubmit={submitForm}>
-        
+           
         <input
-            // className={css.SearchFormInput}
+            className={css.searchTerm}
             type="text"
             autoComplete="off"
             autoFocus
-            placeholder="Search images and photos"
             value={searchName}
             onChange={handleNameChange}              
             />
             
-            <button type="submit" >Search</button>
+            <button className={css.searchButton} type="submit" >Search</button>
             
             </form>
        
