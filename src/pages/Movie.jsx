@@ -44,7 +44,7 @@ export const Movie = () => {
        {filmsByQuery && <ul className={css.home_styled_ul }>
         {filmsByQuery.map((film) => (
           <li className={css.list_home } key={film.id}>
-            <Link className={css.home_link} to={`/movies/${film.id}`} state={{ from: location }}>
+            <Link className={css.home_link} to={`/goit-react-hw-05-movies/movies/${film.id}`} state={{ from: location }}>
               <img className={css.home_img} width={420} src={poster(film.poster_path)} alt={film.title} />{film.title} {film.name}</Link>
           </li>
         ))}

@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import css from "./HeaderPage.module.css";
 
 const headerItems = [
-  { to: "/", title: "Home" },
+  { to: "/goit-react-hw-05-movies/", title: "Home" },
   {
-    to: "/movies",
+    to: "/goit-react-hw-05-movies/movies",
     title: "Movies",
   },
   

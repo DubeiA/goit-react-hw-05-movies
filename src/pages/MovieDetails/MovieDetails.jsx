@@ -16,9 +16,8 @@ export const MovieDetails = () => {
   }, [movieId]);
 
    
-  const backLinkHref = location.state?.from ?? "/movies";
+  const backLinkHref = location.state?.from ?? "/goit-react-hw-05-movies/movies";
     
-
     let genres = detailsForFilms.genres
   return (
     <>
@@ -56,10 +55,10 @@ export const MovieDetails = () => {
           <ul className={css.option}  >
 
           <li>
-              <Link className={css.link} to={`/movies/${movieId}/cast`} state={{ from: location.state?.from ?? 'movies' }}>Cast</Link>
+              <Link className={css.link} to={`/goit-react-hw-05-movies/movies/${movieId}/cast`} state={{ from: location.state?.from ?? '/goit-react-hw-05-movies/movies' }}>Cast</Link>
           </li>
           <li>
-          <Link className={css.link} to={`/movies/${movieId}/reviews`} state={{ from: location.state?.from ?? 'movies' }}>Reviews</Link>
+          <Link className={css.link} to={`/goit-react-hw-05-movies/movies/${movieId}/reviews`} state={{ from: location.state?.from ?? '/goit-react-hw-05-movies/movies' }}>Reviews</Link>
           </li>
         </ul>
           <Outlet />

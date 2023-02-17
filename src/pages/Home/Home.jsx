@@ -18,7 +18,7 @@ export const Home = () => {
       <ul className={css.home_styled_ul }>
         {trendingFilms.map((trendingFilm) => (
           <li className={css.list_home } key={trendingFilm.id}>
-            <Link className={css.home_link} to={`/movies/${trendingFilm.id}`} state={{from: location.pathname}}><img className={ css.home_img} width={420} src={`https://image.tmdb.org/t/p/w780${
+            <Link className={css.home_link} to={`/goit-react-hw-05-movies/movies/${trendingFilm.id}`} state={{from: location.pathname}}><img className={ css.home_img} width={420} src={`https://image.tmdb.org/t/p/w780${
             trendingFilm.poster_path}`} alt={trendingFilm.title} />{trendingFilm.title} {trendingFilm.name}</Link>
           </li>
         ))}

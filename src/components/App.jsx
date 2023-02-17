@@ -10,10 +10,10 @@ export const App = () => {
   return (
     <div>
        <Routes>
-        <Route path="goit-react-hw-05-movies/" element={<Layout />}>
+        <Route path="/goit-react-hw-05-movies" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="goit-react-hw-05-movies/movies" element={<Movie />} />
-          <Route path="goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails />}>
+          <Route path="/goit-react-hw-05-movies/movies" element={<Movie />} />
+          <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails />}>
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={ <Reviews/>} />
           </Route>
