@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import MovieSearch from "components/Searchbar/Searchbar";
 import { Link, useSearchParams, useLocation } from "react-router-dom";
-import * as FilmsAPI from "../Api/ApiMovie";
-import css from '../pages/Home/Home.module.css'
-import image from '../images/film-plug.webp'
+import * as FilmsAPI from "../../Api/ApiMovie";
+import css from '../Home/Home.module.css'
+import image from '../../images/film-plug.webp'
 
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-export const Movie = () => { 
+const Movie = () => { 
     const [searchParams, setSearchParams] = useSearchParams();
     const [filmsByQuery, setFilmsByQuery] = useState([])
     const query = searchParams.get('query') ?? ''
@@ -54,3 +54,6 @@ export const Movie = () => {
        
     )
 }
+
+
+export default Movie

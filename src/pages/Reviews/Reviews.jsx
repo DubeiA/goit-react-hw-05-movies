@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import css from '../Reviews/Review.module.css'
 
-export const Reviews = () => {
+const Reviews = () => {
      const { movieId } = useParams();
     const [reviewsFilm, setReviewsFilm] = useState([]);
     const location = useLocation()
@@ -28,3 +28,4 @@ export const Reviews = () => {
   );
 };
 
+export default Reviews

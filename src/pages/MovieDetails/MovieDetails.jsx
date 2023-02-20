@@ -3,7 +3,7 @@ import { useParams, Outlet, Link, useLocation} from "react-router-dom";
 import css from '../MovieDetails/MovieDetails.module.css'
 import * as FilmsAPI from '../../Api/ApiMovie'
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   
     const { movieId } = useParams();
     const [detailsForFilms, setDetailsForFilms] = useState([]);
@@ -71,3 +71,5 @@ export const MovieDetails = () => {
     
   )
 };
+
+export default MovieDetails

@@ -5,7 +5,7 @@ import css from '../Home/Home.module.css'
 
 import * as FilmsAPI from "../../Api/ApiMovie";
 
-export const Home = () => {
+const Home = () => {
   const [trendingFilms, setTrendingFilms] = useState([]);
   const location = useLocation()
 
@@ -26,3 +26,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home

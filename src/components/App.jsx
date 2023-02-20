@@ -1,16 +1,18 @@
+import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Movie } from '../pages/Movie'
-import { Home } from "pages/Home/Home";
-import { Cast } from "./Cast/Cast";
-import { MovieDetails } from '../pages/MovieDetails/MovieDetails'
 import { Layout } from "./Layout/Layout";
-import {Reviews} from './Reviews/Reviews'
+
+const Home = lazy(() => import('../pages/Home/Home'));
+const Movie = lazy(() => import('../pages/Movie/Movie'));
+const Cast = lazy(() => import('../pages/Cast/Cast'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
+const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 
 export const App = () => {
   return (
     <div>
        <Routes>
-        <Route path="/goit-react-hw-05-movies" element={<Layout />}>
+        <Route path="/goit-react-hw-05-movies/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/goit-react-hw-05-movies/movies" element={<Movie />} />
           <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetails />}>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import image from '../../images/Person-Outline-coloring-page.jpg'
 import css from '../Cast/Cast.module.css'
 
-export const Cast = () => {
+const Cast = () => {
      const { movieId } = useParams();
     const [castFilm, setCastFilm] = useState([]);
 
@@ -20,7 +20,6 @@ export const Cast = () => {
         }
        return image }
     
-  console.log(castFilm);
 
   return (
     <div>
@@ -47,3 +46,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast
