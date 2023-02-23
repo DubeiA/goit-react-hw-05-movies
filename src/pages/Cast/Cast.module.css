@@ -6,3 +6,10 @@
   font-size: 40;
   color: #010101;
 }
+
+.list_style {
+  padding: 109px;
+  display: flex;
+  gap: 49px;
+  flex-wrap: wrap;
+}

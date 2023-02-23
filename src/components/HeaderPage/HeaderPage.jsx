@@ -1,24 +1,22 @@
-import { NavLink } from "react-router-dom";
-import css from "./HeaderPage.module.css";
+import { NavLink } from 'react-router-dom';
+import css from './HeaderPage.module.css';
 
 const headerItems = [
-  { to: "/goit-react-hw-05-movies/", title: "Home" },
+  { to: '/', title: 'Home' },
   {
-    to: "/goit-react-hw-05-movies/movies",
-    title: "Movies",
+    to: '/movies',
+    title: 'Movies',
   },
-  
 ];
 
 export const HeaderPage = () => {
   return (
     <nav className={css.nav}>
       <ul>
-        {headerItems.map((headerItem) => (
+        {headerItems.map(headerItem => (
           <li key={headerItem.title}>
             <NavLink
               className={({ isActive }) => (isActive ? css.nav_active : null)}
-              
               to={headerItem.to}
             >
               {headerItem.title}
